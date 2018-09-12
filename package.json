@@ -1,0 +1,37 @@
+{
+  "name": "gabijs",
+  "version": "0.0.1",
+  "description": "GabiJS DOM",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c && cp dist/gabi.js example/public/gabi.js",
+    "prettier": "prettier --write 'src/*.js'",
+    "test": "jest",
+    "lint": "eslint index.js src/**  test/** --ext .js",
+    "start": "nodemon --watch src --exec npm run build"
+  },
+  "dependencies": {
+    "rxjs": "^6.3.2",
+    "string-template": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "^23.5.0",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.14.2",
+    "rollup": "^0.65.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-json": "^3.0.0",
+    "rollup-plugin-node-resolve": "^3.4.0"
+  }
+}

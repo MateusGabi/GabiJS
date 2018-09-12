@@ -1,0 +1,101 @@
+<html>
+    <head>
+            <link href="https://cdn.emojidex.com/scripts/css/emojidex.min.css" rel="stylesheet" />
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+        #editor {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+    display: flex;
+    flex: 1;
+    width: 100vw;
+    overflow: hidden
+}
+
+#header {
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+#printBtn, #saveBtn {
+    color: #fefefe;
+    cursor: pointer;
+    padding: 1em;
+    border: 0;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+#filenameInput {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 32px;
+    color: #363636;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+#printBtn {
+    background: #311b92;
+}
+
+#saveBtn {
+    background: #4caf50
+}
+
+textarea, #compiledMarkdown {
+  padding: 0 20px;
+  flex: 1;
+  overflow-y: scroll
+}
+
+textarea {
+  border: none;
+  border-right: 1px solid #ccc;
+  background-color: #f6f6f6;
+  font-size: 14px;
+  font-family: 'Monaco', courier, monospace;
+  padding: 20px;
+}
+
+code {
+  color: #f66;
+}
+</style>
+    </head>
+    <body>
+
+        <header id="header">
+            <div>
+                <input type="text" id="filenameInput" placeholder="Filename" />
+            </div>
+            <div>
+                <button id="saveBtn"></button>
+                <button id="printBtn"></button>
+            </div>
+        </header>
+        <div id="editor">
+            <textarea></textarea>
+            <div id="compiledMarkdown"></div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.emojidex.com/scripts/javascript/emojidex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+        <script src="gabi.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
