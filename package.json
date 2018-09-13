@@ -5,7 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c && cp dist/gabi.js example/public/gabi.js",
+    "build": "npm run build:cjs && npm run build:web",
+    "build:cjs": "rollup --config rollup.config.cjs.js",
+    "build:web": "rollup --config rollup.config.web.js && cp dist/gabi.js example/public/gabi.js",
     "prettier": "prettier --write 'src/*.js'",
     "test": "jest",
     "lint": "eslint index.js src/**  test/** --ext .js",

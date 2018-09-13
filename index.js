@@ -1,1 +1,3 @@
-export const Component = require('./dist/component').default;
+const GabiJS = require('./dist');
+
+export default GabiJS
