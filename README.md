@@ -12,18 +12,15 @@ You don't need install. Just paste in your `index.html`:
 #### Example
 
 ```html
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;GabiJS App&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-         &lt;div id='message' /&gt;
-
-
-    &lt;script src="https://rawgit.com/MateusGabi/GabiJS/master/dist/gabi.js"&gt;&lt;/script&gt;
-    &lt;script src='dist/app.js' /&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
+<html>
+  <head>
+    <title>GabiJS App</title>
+  </head>
+  <body>
+    <div id='message' />
+    <script src="https://rawgit.com/MateusGabi/GabiJS/master/dist/gabi.js" />
+  </body>
+</html>
 ```
 
 ### Create your App
@@ -33,10 +30,7 @@ You don't need install. Just paste in your `index.html`:
 var GabiJS = window.GabiJS
 
 var MyApp = new GabiJS.App({
-    name: 'My App',
-    store: {
-        message: 'Hello World'
-    }
+    name: 'My App'
 })
 ```
 
@@ -46,6 +40,9 @@ var MyApp = new GabiJS.App({
 var DisplayMessageComponent = new GabiJS.Component({
     app: MyApp,
     el: '#message',
+    state: {
+      message: 'Hello World!'
+    },
     template: function () {
         return this.state.message
     }
